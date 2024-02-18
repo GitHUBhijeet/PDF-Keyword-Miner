@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
-}
+/* src/App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.App {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  background: linear-gradient(135deg, #9a5f5a, #f42c12);
   color: white;
+  padding: 10px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.keywords {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: auto; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrollbar when necessary */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.keywords h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.keywords ul {
+  padding-left: 0;
+  columns: 3;
+  column-gap: 20px;
+  list-style: none;
+  text-align: left; /* Add this line to align keywords to the left */
+}
+
+.keywords li {
+  margin: 5px 0;
+  font-size: 14px;
+  break-inside: avoid-column;
+}
+
+.file-input {
+  margin-top: 20px;
+}
+
+.file-input input {
+  display: none;
+}
+
+.upload-btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #2980b9;
+}
+.keyword-list {
+  font-weight: bold;
+  color: rgb(96, 23, 5);
+}
+.keyword-item {
+  font-size: larger;
 }

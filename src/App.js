@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import FileInput from "./FileInput";
 
 function App() {
+  const [keywords, setKeywords] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Keyword Extractor</h1>
       </header>
+      <FileInput setKeywords={setKeywords} />
+      <div className="keywords">
+        <h2>Keywords:</h2>
+        <ul className="keyword-list">
+          {keywords.map((keyword, index) => (
+            <li key={index} className="keyword-item">
+              {keyword}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
